@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import ExpenseItem from "../ExpenseItem/ExpenseItem";
+
+import ExpensesList from "../ExpensesList/ExpensesList";
 import Card from "../Card/Card";
 import ExpensesFilter from "../ExpensesFilter/ExpensesFilter";
 import "../../scss/style.scss";
@@ -22,15 +23,7 @@ function Expenses(props) {
           selected={filteredYear}
           onChangeFilter={filterChengeHendler}
         />
-
-        {filteredExpenses.map((el) => (
-          <ExpenseItem
-            key={el.id}
-            title={el.title}
-            amount={el.amount}
-            date={el.date}
-          />
-        ))}
+        <ExpensesList year={filteredYear} items={filteredExpenses} />
       </Card>
     </div>
   );
