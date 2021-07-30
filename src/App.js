@@ -28,6 +28,8 @@ const App = () => {
   const [expenses, setExpense] = useState(initialExpenses);
   const addExpenseHandler = (expense) => {
     console.log("In App.js", expense);
+
+    //dynamic list
     setExpense((prevExpensions) => {
       return [expense, ...prevExpensions];
     });
