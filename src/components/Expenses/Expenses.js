@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import ExpensesList from "../ExpensesList/ExpensesList";
 import Card from "../Card/Card";
 import ExpensesFilter from "../ExpensesFilter/ExpensesFilter";
+import ExpensesChart from "../ExpensesChart/ExpensesChart";
 import "../../scss/style.scss";
 
 function Expenses(props) {
@@ -23,6 +24,7 @@ function Expenses(props) {
           selected={filteredYear}
           onChangeFilter={filterChengeHendler}
         />
+        <ExpensesChart expenses={filteredExpenses} />
         <ExpensesList year={filteredYear} items={filteredExpenses} />
       </Card>
     </div>
